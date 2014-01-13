@@ -11,10 +11,14 @@ MyApp.Views = MyApp.Views || {};
 
         initialize: function() {
 
+          MyApp.mediator = {};
+          _.extend(MyApp.mediator, Backbone.Events);
+
           this.$el.html(this.template());
 
           this.history = new MyApp.Views.HistoryView({
-              el: this.$el.find('#history_list')
+              el: this.$el.find('#history_list'),
+              searches: new MyApp.Collections.SearchHistoryCollection()
           });
 
           this.searchBar = new MyApp.Views.SearchBarView({

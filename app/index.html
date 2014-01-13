@@ -11,6 +11,8 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />  -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
@@ -28,17 +30,20 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/backbone.localStorage/backbone.localStorage-min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
         <script src="scripts/namespace.js"></script>
         <script src="scripts/templates.js"></script>
+        <script src="scripts/collections/search_history.js"></script>
+        <script src="scripts/views/app.js"></script>
         <script src="scripts/views/footer.js"></script>
+        <script src="scripts/views/history.js"></script>
+        <script src="scripts/views/search_bar.js"></script>
         <script src="scripts/views/search_result.js"></script>
         <script src="scripts/views/tabs.js"></script>
-        <script src="scripts/views/search_bar.js"></script>
-        <script src="scripts/views/history.js"></script>
-        <script src="scripts/views/app.js"></script>
         <script src="scripts/app.js"></script>
         <!-- endbuild -->
 </body>
