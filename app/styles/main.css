@@ -1,0 +1,60 @@
+body {
+  background: #fafafa;
+}
+
+.hero-unit {
+  margin: 50px auto 0 auto;
+  width: 300px;
+}
+
+@charset "utf-8";
+body {
+  margin: 0;
+  padding: 0;
+}
+#header-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#header-container {
+  height: 34px;
+}
+#header {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+#container {
+  margin: 0 auto;
+  overflow: auto;
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+#history {
+  float: left;
+  width: 30%;
+}
+#search_results {
+  float: right;
+  width: 70%;
+}
+#footer-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+#footer-container {
+  height: 24px;
+}
+#footer {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+header,
+footer {
+  border: 1px solid #000;
+}
