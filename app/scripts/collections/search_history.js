@@ -7,7 +7,7 @@ MyApp.Collections = MyApp.Collections || {};
 
     MyApp.Collections.SearchHistoryCollection = Backbone.Collection.extend({
 
-        localStorage: new Backbone.LocalStorage('bouzuya_SPA_searchHistory')
+        localStorage: new Backbone.LocalStorage('bouzuya_SPA_searchHistory2')
 
     });
 

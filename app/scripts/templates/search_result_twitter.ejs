@@ -1,1 +1,15 @@
-Twitter
+<ul id="twitter_list">
+  <% for(var i = 0; i < models.length; i++) { %>
+  <%   var model = models[i]; %>
+    <li>
+      <span class="img">
+        <img src="<%= model.profile_image_url %>">
+      </span>
+      <span class="author">
+        <a href="https://twitter.com/<%= model.from_user %>" target="_blank">@<%= model.from_user %></a></span>
+        <span class="body"><%= model.text_linked %></span>
+        <span class="time"><a href="https://twitter.com/<%= model.from_user %>/status/<%= model.id_str %>" target="_blank"><%= model.created_at %></a>
+      </span>
+    </li>
+    <% } %>
+</ul>

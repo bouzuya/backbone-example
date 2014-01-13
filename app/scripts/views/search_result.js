@@ -8,8 +8,32 @@ MyApp.Views = MyApp.Views || {};
     MyApp.Views.SearchResultView = Backbone.View.extend({
 
         initialize: function() {
-          this.$el.html(this.options.template());
+
+          _.bindAll(this);
+
+          this.collections = this.options.collections;
+          this.template = this.options.template;
+          this.service = this.options.service;
+
+          MyApp.mediator.on('search:' + this.service, this.search);
+
+          this.listenTo(this.collections, 'add', this.render);
+          this.listenTo(this.collections, 'remove', this.render);
+
+        },
+
+        search: function(search) {
+          this.collections.search(search);
+        },
+
+        render: function() {
+
+          console.log(this.collections.toJSON());
+          var tmpl = this.template({ models: this.collections.toJSON() });
+          this.$el.html(tmpl);
+
         }
+
 
     });
 

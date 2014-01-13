@@ -29,8 +29,8 @@ MyApp.Views = MyApp.Views || {};
           search.query = query;
           search.service = service;
 
-          //「search」イベントを発火する
           MyApp.mediator.trigger('search', search);
+          MyApp.mediator.trigger('search:' + service, search);
 
         }
 

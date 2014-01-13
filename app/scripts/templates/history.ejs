@@ -1,11 +1,11 @@
 <% for(var i = 0, n = history.length; i < n; i++) { %>
-<ul class="history" data-id="{{this.id}}">
+<ul class="history" data-id="<%= history[i].id %>">
   <li class="history_contents">
     <span class="query"><%= history[i].query %></span>
     <span class="service">(<%= history[i].service %>)</span>
   </li>
   <li class="history_buttons">
-    <i class="icon-remove-sign icon-white btn_delete"></i>
+    <i class="glyphicon glyphicon-remove btn_delete"></i>
   </li>
 </ul>
 <% } %>

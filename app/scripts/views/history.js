@@ -50,7 +50,7 @@ MyApp.Views = MyApp.Views || {};
 
         },
 
-        _getHistory: function() {
+        _getHistory: function(e) {
 
           var $target = $(e.target).closest('.history');
 
