@@ -9,13 +9,12 @@ MyApp.Views = MyApp.Views || {};
 
         initialize: function() {
 
-          _.bindAll(this);
-
           this.collections = this.options.collections;
           this.template = this.options.template;
           this.service = this.options.service;
 
-          MyApp.mediator.on('search:' + this.service, this.search);
+          MyApp.mediator.on('search:' + this.service, this.search, this);
+          MyApp.mediator.on('historySearch:' + this.service, this.search, this);
 
           this.listenTo(this.collections, 'add', this.render);
           this.listenTo(this.collections, 'remove', this.render);

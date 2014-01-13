@@ -1,19 +1,21 @@
 <nav class="navbar navbar-inverse" role="navigation">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="#" title="How to build single page application with Backbone.js">SPA-with-Backbone.js</a>
-  </div>
-  <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-    <form class="form-search navbar-search pull-left" action="">
-      <span class="input-group">
-        <input type="text" name="query" id="query" value="" placeholder="Search Query" class="form-control" />
-        <span id="btn_search" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-      </span>
-      <div id="search_types">
-        <input type="radio" name="service" id="twitter" value="twitter" />
-        <label for="twitter" class="inline">Twitter</label>
-        <input type="radio" name="service" id="hotpepper" value="hotpepper" />
-        <label for="hotpepper">Hotpepper</label>
-      </span>
-    </form>
+  <div class="navbar-inner">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" title="How to build single page application with Backbone.js">SPA-with-Backbone.js</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="" action="">
+        <div class="navbar-form pull-left" id="search_types">
+          <input type="radio" name="service" id="twitter" value="twitter" class="inline" checked="checked" />
+          <label for="twitter" class="inline">Twitter</label>
+          <input type="radio" name="service" id="hotpepper" value="hotpepper" class="inline" />
+          <label for="hotpepper" class="inline">Hotpepper</label>
+        </div>
+        <div class="navbar-form input-group">
+          <input type="text" name="query" id="query" value="" placeholder="Search Query" class="form-control" />
+          <span id="btn_search" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+        </div>
+      </form>
+    </div>
   </div>
 </nav>

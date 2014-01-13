@@ -9,6 +9,10 @@ MyApp.Views = MyApp.Views || {};
 
         template: JST['app/scripts/templates/tabs.ejs'],
 
+        events: {
+          'click #tab>li': 'changeTab'
+        },
+
         initialize: function() {
 
           this.$el.html(this.template());
@@ -28,11 +32,26 @@ MyApp.Views = MyApp.Views || {};
           });
 
           MyApp.mediator.on('search', this.selectTab);
+          MyApp.mediator.on('historySearch', this.selectTab);
+
         },
 
         selectTab: function(search) {
           $('a[href^=#' + search.service + ']').tab('show');
+        },
+
+        changeTab: function(e) {
+
+          var service = this._getService(e.currentTarget);
+          MyApp.mediator.trigger('changeTab', service);
+
+        },
+
+        _getService: function(tab) {
+          return $(tab).data('service');
         }
+
+
 
     });
 

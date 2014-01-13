@@ -16,7 +16,7 @@ ol {
   width: 100%;
 }
 #header-container  {
-  height: 34px;
+  height: 54px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #292c3e), color-stop(1, #13152a));
   background: -webkit-linear-gradient(top, #292c3e 0%, #13152a 100%);
   background: -moz-linear-gradient(top, #292c3e 0%, #13152a 100%);
@@ -38,14 +38,10 @@ ol {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-.navbar-inverse .navbar-inner {
-  background: transparent;
-  border: none;
-}
 #container  {
   margin: 0 auto;
   overflow: auto;
-  padding-top: 35px;
+  padding-top: 54px;
   padding-bottom: 25px;
 }
 #history  {
@@ -53,11 +49,6 @@ ol {
   width: 30%;
   background: #2d335b;
   color:  #aaa ;
-}
-#history_title  {
-  background-color: #1f203b;
-  height: 23px;
-  padding: 4px;
 }
 .history {
   border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -117,8 +108,4 @@ ol {
   width: 100%;
   margin: 0 auto;
   position: relative;
-}
-
-#btn_search:hover {
-  cursor: click;
 }

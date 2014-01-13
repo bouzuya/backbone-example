@@ -10,19 +10,19 @@ MyApp.Views = MyApp.Views || {};
         template: JST['app/scripts/templates/history.ejs'],
 
         events: {
-          'click .btn_delete': 'removeHistory'
+          'click .btn_delete': 'removeHistory',
+          'click .history_contents': 'searchHistory'
         },
 
         initialize: function() {
-
-          _.bindAll(this);
 
           this.searches = this.options.searches;
 
           this.searches.fetch();
           this.render();
 
-          MyApp.mediator.on('search', this.addHistory);
+          MyApp.mediator.on('search', this.addHistory, this);
+          MyApp.mediator.on('changeTab', this.searchCurrentHistory, this);
 
           this.listenTo(this.searches, 'add remove', this.render);
 
@@ -40,6 +40,14 @@ MyApp.Views = MyApp.Views || {};
           var id = this._getHistory(e).id;
           var search = this.searches.get(id);
           search.destroy();
+
+        },
+
+        searchHistory: function(e) {
+
+          var history = this._getHistory(e);
+          MyApp.mediator.trigger('historySearch', history);
+          MyApp.mediator.trigger('historySearch:' + history.service, history);
 
         },
 
@@ -61,7 +69,27 @@ MyApp.Views = MyApp.Views || {};
 
           return history;
 
+        },
+
+        searchCurrentHistory: function(service) {
+
+          var histories = this.searches.where({
+              service: service
+          });
+
+          var history;
+
+          if (histories.length > 0) {
+
+            history = histories[0].attributes;
+            MyApp.mediator.trigger('historySearch', history);
+            MyApp.mediator.trigger('historySearch:' + history.service, history);
+
+          }
+
+
         }
+
 
     });
 
